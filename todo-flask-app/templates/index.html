@@ -5,20 +5,22 @@
 </head>
 <body>
     <h1>Minha Lista de Tarefas</h1>
+
     <form action="/add" method="post">
         <input type="text" name="task" placeholder="Nova tarefa" required>
         <button type="submit">Adicionar</button>
     </form>
+
     <ul>
-        {% for i, t in enumerate(tasks) %}
+        {% for t in tasks %}
             <li>
                 {% if t.done %}
                     <s>{{ t.task }}</s>
                 {% else %}
                     {{ t.task }}
-                    <a href="/done/{{ i }}">[Concluir]</a>
+                    <a href="/done/{{ loop.index0 }}">[Concluir]</a>
                 {% endif %}
-                <a href="/delete/{{ i }}">[Excluir]</a>
+                <a href="/delete/{{ loop.index0 }}">[Excluir]</a>
             </li>
         {% endfor %}
     </ul>

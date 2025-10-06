@@ -1,0 +1,24 @@
+Deploy app flask
+
+# Instalar pacotes
+sudo apt update
+sudo apt install python3-pip python3-venv git -y
+
+# Clonar repositório
+git clone https://github.com/alexandrecorreagomes/senai.git
+
+# Acessar o diretório do app
+cd senai/todo-flask-app
+
+# Criar o ambiente virtual
+python3 -m venv venv
+
+# Ativar o ambiente virtual
+source venv/bin/activate
+
+# Instalar as dependências
+pip install -r requirements.txt
+
+# Subir a aplicação
+python3 app.py
+
